@@ -24,3 +24,4 @@
   fetch:
     src: /var/lib/jenkins/secrets/initialAdminPassword
     dest: ~/allspark/{{ inventory_hostname }}/jenkinsInitialAdminPassword.txt
+    flat: yes

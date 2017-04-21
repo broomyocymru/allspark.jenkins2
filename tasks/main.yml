@@ -1,10 +1,14 @@
 ---
 
-- name: Get Jenkins Repository
-  command: wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+- name: Configure apt key for jenkins repository
+  apt_key:
+    url: https://jenkins-ci.org/debian/jenkins-ci.org.key
+    state: present
 
-- name: Add Jenkins Repository
-  command: sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+- name: Add jenkins APT repository
+  apt_repository:
+    repo: deb http://pkg.jenkins-ci.org/debian binary/
+    state: present
 
 - name: Update Packages
   apt:

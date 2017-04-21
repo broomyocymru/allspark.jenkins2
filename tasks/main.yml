@@ -1,7 +1,9 @@
 ---
 
-- name: Add Jenkins Repository
+- name: Get Jenkins Repository
   command: wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+
+- name: Add Jenkins Repository
   command: sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 - name: Update Packages
@@ -17,4 +19,4 @@
 - name: Get Initial Admin Password
   fetch:
     src: /var/lib/jenkins/secrets/initialAdminPassword
-    dest: ~/prefix-{{ inventory_hostname }}/jenkinsInitialAdminPassword.txt
+    dest: ~/allspark/{{ inventory_hostname }}/jenkinsInitialAdminPassword.txt

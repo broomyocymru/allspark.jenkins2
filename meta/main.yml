@@ -1,0 +1,10 @@
+galaxy_info:
+  author: Allspark
+  description: Jenkins2
+  company: Allspark
+  license: MIT
+  min_ansible_version: 1.2
+  galaxy_tags:
+    - allspark
+
+dependencies: []

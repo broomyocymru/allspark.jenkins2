@@ -11,6 +11,7 @@
 - name: Install Jenkins
   apt:
     name: jenkins
+    allow_unauthenticated: yes
     state: present
 
 - name: Get Initial Admin Password
